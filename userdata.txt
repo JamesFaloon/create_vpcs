@@ -1,0 +1,10 @@
+#!/bin/bash 
+sudo yum update -y 
+sudo yum install httpd -y
+cd /var/www
+sudo chmod a+rwx html
+cd html 
+echo "<html><body><h1> Hello from $(hostname -f) Student Name James Faloon</html></body></h1>" > index.html
+cd
+sudo systemctl restart httpd  
+sudo systemctl enable httpd
